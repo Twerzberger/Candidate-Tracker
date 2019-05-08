@@ -1,0 +1,28 @@
+﻿@using CandidateTracking.Data
+@model IEnumerable<Candidate>
+
+<div class="row">
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Notes</th>
+            <th>View Candidate</th>
+        </tr>
+
+        @foreach (var candidate in Model)
+        {
+        <tr>
+            <td>@candidate.Name</td>
+            <td>@candidate.Phone</td>
+            <td>@candidate.Email</td>
+            <td>@candidate.Notes</td>
+            <td>
+                <a href="/home/viewcandidate?id=@candidate.Id">View Candidate</a>
+            </td>
+        </tr>
+        }
+
+    </table>
+</div>
